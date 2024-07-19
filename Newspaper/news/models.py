@@ -54,8 +54,11 @@ class Post(models.Model):
 	# 	elif self.rating > 10:
 	# 		return self.rating == 10
 
-	def preview(self):
-		return self.text[0:123] + "..."
+	# def preview(self):
+	# 	return self.text[0:123] + "..."
+
+	def __str__(self):
+		return f'{self.title.title()}: {self.text[:20]}'
 
 class Comment(models.Model):
 	text = models.TextField()
